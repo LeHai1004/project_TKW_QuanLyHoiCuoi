@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên hệ - Wedding Planner</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <h2><i class="fas fa-heart"></i> Wedding Planner</h2>
+          </div>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link">Dịch vụ</a>
+            </li>
+            <li class="nav-item">
+              <a href="gallery.html" class="nav-link">Thư viện ảnh</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link active">Liên hệ</a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Liên hệ với chúng tôi</h1>
+        <p>
+          Chúng tôi sẵn sàng tư vấn và hỗ trợ bạn tạo nên đám hỏi cưới mơ ước
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Địa chỉ</h3>
+            <p>123 Đường ABC, Phường 1, Quận 1, TP.HCM</p>
+            <p>Chi nhánh Hà Nội: 456 Đường XYZ, Quận Ba Đình, Hà Nội</p>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Điện thoại</h3>
+            <p>Hotline: 0123 456 789</p>
+            <p>Hỗ trợ: 0987 654 321</p>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <p>info@weddingplanner.com</p>
+            <p>support@weddingplanner.com</p>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Giờ làm việc</h3>
+            <p>Thứ 2 - Thứ 6: 8:00 - 18:00</p>
+            <p>Thứ 7: 8:00 - 12:00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="contact-form-map">
+      <div class="container">
+        <div class="contact-content">
+          <div class="contact-form-section">
+            <h2>Gửi tin nhắn cho chúng tôi</h2>
+            <p>
+              Điền thông tin vào form bên dưới, chúng tôi sẽ liên hệ lại với bạn
+              trong vòng 24 giờ.
+            </p>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Họ và tên *</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Số điện thoại *</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="wedding-date">Ngày dự kiến tổ chức</label>
+                  <input type="date" id="wedding-date" name="wedding-date" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="service">Dịch vụ quan tâm</label>
+                <select id="service" name="service">
+                  <option value="">Chọn dịch vụ</option>
+                  <option value="full-package">Gói trọn gói</option>
+                  <option value="decoration">Trang trí hỏi cưới</option>
+                  <option value="mc">MC chuyên nghiệp</option>
+                  <option value="sound-light">Âm thanh - Ánh sáng</option>
+                  <option value="photography">Chụp ảnh - Quay phim</option>
+                  <option value="consultation">Tư vấn</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="budget">Ngân sách dự kiến</label>
+                <select id="budget" name="budget">
+                  <option value="">Chọn ngân sách</option>
+                  <option value="under-10m">Dưới 10 triệu</option>
+                  <option value="10-20m">10 - 20 triệu</option>
+                  <option value="20-30m">20 - 30 triệu</option>
+                  <option value="30-50m">30 - 50 triệu</option>
+                  <option value="over-50m">Trên 50 triệu</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Tin nhắn *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Hãy chia sẻ với chúng tôi về ý tưởng đám hỏi cưới của bạn..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="newsletter" name="newsletter" />
+                  <span class="checkmark"></span>
+                  Tôi muốn nhận thông tin về các chương trình khuyến mãi và xu
+                  hướng mới
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+              </button>
+            </form>
+          </div>
+
+          <div class="map-section">
+            <h2>Vị trí của chúng tôi</h2>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3253113553!2d106.7004233153328!3d10.776370392315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4b90b68bd3%3A0x2b0c8a8a8a8a8a8a!2sDistrict%201%2C%20Ho%20Chi%20Minh%20City!5e0!3m2!1sen!2s!4v1634567890123!5m2!1sen!2s"
+                width="100%"
+                height="400"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="map-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Phường 1,
+                Quận 1, TP.HCM
+              </p>
+              <p>
+                <i class="fas fa-subway"></i> Ga Metro Bến Thành (5 phút đi bộ)
+              </p>
+              <p><i class="fas fa-car"></i> Có chỗ đậu xe miễn phí</p>
+              <p>
+                <img
+                  src="images/contact-office.jpg"
+                  alt="Văn phòng"
+                  style="max-width: 100%; border-radius: 10px; margin-top: 10px"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="section-title">Câu hỏi thường gặp</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Thời gian tư vấn miễn phí là bao lâu?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Chúng tôi cung cấp tư vấn miễn phí trong 1-2 giờ tại văn phòng
+                hoặc qua video call. Thời gian này đủ để chúng tôi hiểu rõ nhu
+                cầu và đưa ra đề xuất phù hợp.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Chi phí tổ chức đám hỏi cưới là bao nhiêu?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Chi phí phụ thuộc vào quy mô và yêu cầu cụ thể. Gói cơ bản từ 8
+                triệu, gói tiêu chuẩn từ 15 triệu, gói cao cấp từ 25 triệu.
+                Chúng tôi sẽ báo giá chi tiết sau khi tư vấn.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Có thể thay đổi kế hoạch sau khi đã ký hợp đồng không?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Có thể, nhưng cần thông báo trước ít nhất 1 tháng. Một số thay
+                đổi có thể phát sinh thêm chi phí. Chúng tôi sẽ thảo luận và
+                thống nhất trước khi thực hiện.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Chúng tôi có cần chuẩn bị gì trước khi gặp mặt?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Hãy chuẩn bị: ngân sách dự kiến, số lượng khách mời, địa điểm
+                mong muốn, phong cách trang trí yêu thích, và bất kỳ yêu cầu đặc
+                biệt nào.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Thời gian chuẩn bị tối thiểu là bao lâu?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Chúng tôi khuyến nghị chuẩn bị trước 3-6 tháng để có thời gian
+                lên kế hoạch chi tiết và đảm bảo chất lượng. Tuy nhiên, chúng
+                tôi có thể hỗ trợ gấp trong 1 tháng nếu cần thiết.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-media">
+      <div class="container">
+        <h2 class="section-title">Theo dõi chúng tôi</h2>
+        <p>
+          Kết nối với chúng tôi trên các mạng xã hội để cập nhật những xu hướng
+          mới nhất
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link facebook">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+          </a>
+          <a href="#" class="social-link instagram">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="social-link youtube">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube</span>
+          </a>
+          <a href="#" class="social-link tiktok">
+            <i class="fab fa-tiktok"></i>
+            <span>TikTok</span>
+          </a>
+          <a href="#" class="social-link zalo">
+            <i class="fab fa-whatsapp"></i>
+            <span>Zalo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Sẵn sàng bắt đầu hành trình tạo nên đám hỏi cưới mơ ước?</h2>
+          <p>Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết</p>
+          <div class="cta-buttons">
+            <a href="tel:0123456789" class="btn btn-primary">
+              <i class="fas fa-phone"></i> Gọi ngay
+            </a>
+            <a href="#contactForm" class="btn btn-secondary">
+              <i class="fas fa-envelope"></i> Gửi tin nhắn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3><i class="fas fa-heart"></i> Wedding Planner</h3>
+            <p>Chuyên tổ chức các sự kiện hỏi cưới đẹp mắt và đáng nhớ nhất.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Dịch vụ</h4>
+            <ul>
+              <li><a href="services.html">Trang trí hỏi cưới</a></li>
+              <li><a href="services.html">MC chuyên nghiệp</a></li>
+              <li><a href="services.html">Âm thanh - Ánh sáng</a></li>
+              <li><a href="services.html">Chụp ảnh - Quay phim</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Liên kết</h4>
+            <ul>
+              <li><a href="about.html">Giới thiệu</a></li>
+              <li><a href="gallery.html">Thư viện ảnh</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Liên hệ</h4>
+            <div class="contact-info">
+              <p><i class="fas fa-phone"></i> 0123 456 789</p>
+              <p><i class="fas fa-envelope"></i> info@weddingplanner.com</p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận 1,
+                TP.HCM
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Wedding Planner. Tất cả quyền được bảo lưu.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
