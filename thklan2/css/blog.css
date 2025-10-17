@@ -27,8 +27,8 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 .btn-primary {
-  background: #e91e63;
-  color: #fff;
+  color: #e91e63;
+  background: #fff;
 }
 .btn-primary:hover {
   background: #c2185b;
