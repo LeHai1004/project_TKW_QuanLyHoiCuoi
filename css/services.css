@@ -1,8 +1,14 @@
-/* Base, header, nav, buttons, containers shared */
+/* =================================================== */
+/* 1. Base, Header, Nav, Buttons, Containers (Dùng chung) */
+/* =================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  font-size: 100%; /* 1rem = 16px */
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -16,15 +22,15 @@ body {
   padding: 0 20px;
 }
 .btn {
-  padding: 16px 40px;
+  padding: 14px 35px; /* SỬA: Giảm padding một chút */
   border: none;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
   display: inline-block;
-  font-size: 1.2rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  font-size: 1rem; /* SỬA: Dùng 1rem (16px) làm chuẩn */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 .btn-primary {
   background: #e91e63;
@@ -33,7 +39,18 @@ body {
 .btn-primary:hover {
   background: #c2185b;
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background: #fff;
+  color: #667eea;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 .btn-outline {
   background: transparent;
@@ -47,16 +64,22 @@ body {
 .page-header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
-  padding: 120px 0 80px;
+  padding: 100px 0 60px; /* SỬA: Giảm padding */
   text-align: center;
 }
 .page-header h1 {
-  font-size: 3rem;
+  font-size: 2.8rem; /* SỬA: Giảm font size */
   margin-bottom: 1rem;
 }
 .page-header p {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* SỬA: Giảm font size */
   opacity: 0.9;
+}
+.section-title {
+  text-align: center;
+  font-size: 2.2rem; /* SỬA: Giảm font size */
+  margin-bottom: 3rem;
+  color: #333;
 }
 .header {
   background: #fff;
@@ -79,7 +102,7 @@ body {
 }
 .nav-logo h2 {
   color: #e91e63;
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* SỬA: Giảm font size */
 }
 .nav-logo i {
   margin-right: 10px;
@@ -112,190 +135,30 @@ body {
   transition: 0.3s;
 }
 
-/* Services detail */
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
-}
-.services-detail {
-  padding: 80px 0;
-}
-.service-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4rem;
-  gap: 3rem;
-}
-.service-item.reverse {
-  flex-direction: row-reverse;
-}
-.service-content {
-  flex: 1;
-}
-.service-content .service-icon {
-  font-size: 3rem;
-  color: #e91e63;
-  margin-bottom: 1rem;
-}
-.service-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-.service-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: #666;
-  line-height: 1.8;
-}
-.service-features {
-  list-style: none;
-  margin-bottom: 2rem;
-}
-.service-features li {
-  padding: 0.5rem 0;
-  color: #666;
-}
-.service-features i {
-  color: #e91e63;
-  margin-right: 10px;
-}
-.service-price {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #e91e63;
-}
-.service-image {
-  flex: 1;
-}
-.service-image img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-/* Pricing packages */
-.pricing-packages {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-.packages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-.package-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  position: relative;
-  transition: transform 0.3s;
-}
-.package-card:hover {
-  transform: translateY(-10px);
-}
-.package-card.featured {
-  border: 3px solid #e91e63;
-  transform: scale(1.05);
-}
-.package-badge {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #e91e63;
-  color: #fff;
-  padding: 0.5rem 1.5rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-.package-header h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-.package-price {
-  margin-bottom: 2rem;
-}
-.package-price .price {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #e91e63;
-}
-.package-price .currency {
-  font-size: 1rem;
-  color: #666;
-}
-.package-features {
-  list-style: none;
-  margin-bottom: 2rem;
-}
-.package-features li {
-  padding: 0.5rem 0;
-  color: #666;
-}
-.package-features i {
-  color: #e91e63;
-  margin-right: 10px;
-}
-
-/* Process */
-.process-section {
-  padding: 80px 0;
-}
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-.step {
-  text-align: center;
-  padding: 2rem;
-}
-.step-number {
-  width: 60px;
-  height: 60px;
-  background: #e91e63;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 auto 1rem;
-}
-.step h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-/* CTA */
+/* =================================================== */
+/* 2. Footer & CTA (Dùng chung)                        */
+/* =================================================== */
 .cta {
   background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);
   color: #fff;
-  padding: 80px 0;
+  padding: 60px 0; /* SỬA: Giảm padding */
   text-align: center;
 }
 .cta-content h2 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* SỬA: Giảm font size */
   margin-bottom: 1rem;
 }
 .cta-content p {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* SỬA: Giảm font size */
   margin-bottom: 2rem;
   opacity: 0.9;
 }
-
-/* Footer */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .footer {
   background: #333;
   color: #fff;
@@ -370,42 +233,338 @@ body {
   color: #ccc;
 }
 
-/* Responsive */
+.services-detail {
+  padding: 60px 0; /* SỬA: Giảm padding */
+}
+.service-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+  gap: 3rem;
+}
+.service-item.reverse {
+  flex-direction: row-reverse;
+}
+.service-content {
+  flex: 1;
+}
+.service-content .service-icon {
+  font-size: 2.5rem; /* SỬA: Giảm font size */
+  color: #e91e63;
+  margin-bottom: 1rem;
+}
+.service-content h2 {
+  font-size: 2.2rem; /* SỬA: Giảm font size */
+  margin-bottom: 1rem;
+  color: #333;
+}
+.service-content p {
+  font-size: 1.05rem; /* SỬA: Giảm font size */
+  margin-bottom: 1.5rem;
+  color: #666;
+  line-height: 1.8;
+}
+.service-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.service-features li {
+  padding: 0.5rem 0;
+  color: #666;
+}
+.service-features i {
+  color: #e91e63;
+  margin-right: 10px;
+}
+.service-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e91e63;
+}
+.service-image {
+  flex: 1;
+}
+.service-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+.pricing-packages {
+  padding: 60px 0; /* SỬA: Giảm padding */
+  background: #f8f9fa;
+}
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.package-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s;
+}
+.package-card:hover {
+  transform: translateY(-10px);
+}
+.package-card.featured {
+  border: 3px solid #e91e63;
+  transform: scale(1.05);
+}
+.package-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e91e63;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.package-header h3 {
+  font-size: 1.3rem; /* SỬA: Giảm font size */
+  margin-bottom: 1rem;
+  color: #333;
+}
+.package-price {
+  margin-bottom: 2rem;
+}
+.package-price .price {
+  font-size: 2.2rem; /* SỬA: Giảm font size */
+  font-weight: 700;
+  color: #e91e63;
+}
+.package-price .currency {
+  font-size: 1rem;
+  color: #666;
+}
+.package-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.package-features li {
+  padding: 0.5rem 0;
+  color: #666;
+}
+.package-features i {
+  color: #e91e63;
+  margin-right: 10px;
+}
+.process-section {
+  padding: 60px 0; /* SỬA: Giảm padding */
+}
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.step {
+  text-align: center;
+  padding: 2rem;
+}
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: #e91e63;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+}
+.step h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* =================================================== */
+/* 7. Responsive (Chung cho tất cả)                    */
+/* =================================================== */
+@media (max-width: 1024px) {
+  .hero-content-wrapper {
+    width: calc(100% - 160px);
+    min-height: 450px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .btn {
+    padding: 14px 35px;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* SỬA: Giảm font-size các tiêu đề cho Tablet */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+  .page-header p {
+    font-size: 1rem;
+  }
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+  .cta-content p {
+    font-size: 1rem;
+  }
+  /* SỬA: Menu "lớn quá" - giảm padding và margin */
   .hamburger {
     display: flex;
   }
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 70px;
+    top: 61px; /* SỬA: Giảm top (phải khớp chiều cao header) */
     flex-direction: column;
     background: #fff;
     width: 100%;
+    height: calc(100vh - 61px); /* SỬA: Chiều cao 100% */
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 2rem 0;
+    padding: 1rem 0; /* SỬA: Giảm padding */
   }
   .nav-menu.active {
     left: 0;
   }
-  .nav-menu li {
-    margin: 1rem 0;
+  .nav-menu .nav-item {
+    margin: 0.5rem 0; /* SỬA: Giảm margin */
   }
+  .nav-link {
+    font-size: 1.1rem; /* SỬA: Tăng nhẹ font chữ menu */
+    padding: 0.5rem;
+  }
+
+  /* SỬA: Responsive cho các section */
+  .hero-content-wrapper {
+    width: calc(100% - 80px);
+    min-height: 350px;
+    aspect-ratio: auto;
+  }
+  .hero h1 {
+    font-size: 2.2rem; /* SỬA: Giảm font size */
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1rem; /* SỬA: Giảm font size */
+    margin-bottom: 2rem;
+  }
+  .btn {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+  }
+
   .service-item,
   .service-item.reverse {
     flex-direction: column;
   }
+  .service-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .featured-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .featured-text h2 {
+    font-size: 1.5rem;
+  }
+  .newsletter-content {
+    flex-direction: column;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }
+
 @media (max-width: 480px) {
+  /* SỬA: Thêm "bảo bối" thu nhỏ mọi thứ */
+  html {
+    font-size: 87.5%; /* 1rem = 14px. Thu nhỏ mọi thứ 1 cách tỷ lệ */
+  }
   .container {
     padding: 0 15px;
   }
-  .service-content h2 {
-    font-size: 2rem;
+
+  /* SỬA: Giảm padding section cho Mobile */
+  .services-preview,
+  .why-choose,
+  .testimonials,
+  .services-detail,
+  .pricing-packages,
+  .process-section,
+  .featured-article,
+  .blog-grid,
+  .newsletter,
+  .contact-info,
+  .contact-form-map,
+  .faq-section,
+  .social-media,
+  .cta {
+    padding: 40px 0;
+  }
+
+  .hero {
+    padding: 20px 15px;
+  }
+  .hero-content-wrapper {
+    width: calc(100% - 40px);
+    min-height: 280px;
+    border-radius: 15px;
+  }
+  .hero-content {
+    padding: 20px;
+  }
+  .hero h1 {
+    font-size: 1.8rem; /* SỬA: Giảm font size */
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+  .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* SỬA: 1 cột */
   }
   .package-card {
     padding: 1.5rem;
+  }
+  .package-card.featured {
+    transform: scale(1); /* SỬA: Bỏ zoom trên mobile */
+  }
+  .blog-posts {
+    grid-template-columns: 1fr; /* SỬA: 1 cột */
   }
 }

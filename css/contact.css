@@ -1,8 +1,14 @@
-/* Base, header, nav, buttons, containers shared */
+/* =================================================== */
+/* 1. Base, Header, Nav, Buttons, Containers (Dùng chung) */
+/* =================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  font-size: 100%; /* 1rem = 16px */
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -16,15 +22,15 @@ body {
   padding: 0 20px;
 }
 .btn {
-  padding: 16px 40px;
+  padding: 14px 35px; /* SỬA: Giảm padding một chút */
   border: none;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
   display: inline-block;
-  font-size: 1.2rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  font-size: 1rem; /* SỬA: Dùng 1rem (16px) làm chuẩn */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 .btn-primary {
   background: #e91e63;
@@ -33,7 +39,7 @@ body {
 .btn-primary:hover {
   background: #c2185b;
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 .btn-secondary {
   background: transparent;
@@ -44,21 +50,36 @@ body {
   background: #fff;
   color: #667eea;
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+.btn-outline {
+  background: transparent;
+  color: #e91e63;
+  border: 2px solid #e91e63;
+}
+.btn-outline:hover {
+  background: #e91e63;
+  color: #fff;
 }
 .page-header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
-  padding: 120px 0 80px;
+  padding: 100px 0 60px; /* SỬA: Giảm padding */
   text-align: center;
 }
 .page-header h1 {
-  font-size: 3rem;
+  font-size: 2.8rem; /* SỬA: Giảm font size */
   margin-bottom: 1rem;
 }
 .page-header p {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* SỬA: Giảm font size */
   opacity: 0.9;
+}
+.section-title {
+  text-align: center;
+  font-size: 2.2rem; /* SỬA: Giảm font size */
+  margin-bottom: 3rem;
+  color: #333;
 }
 .header {
   background: #fff;
@@ -81,7 +102,7 @@ body {
 }
 .nav-logo h2 {
   color: #e91e63;
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* SỬA: Giảm font size */
 }
 .nav-logo i {
   margin-right: 10px;
@@ -114,286 +135,21 @@ body {
   transition: 0.3s;
 }
 
-/* Contact page */
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
-}
-.contact-info {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-.contact-item {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-.contact-item:hover {
-  transform: translateY(-5px);
-}
-.contact-icon {
-  font-size: 3rem;
-  color: #e91e63;
-  margin-bottom: 1rem;
-}
-.contact-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-.contact-item p {
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-.contact-form-map {
-  padding: 80px 0;
-}
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-.contact-form-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-.contact-form-section p {
-  color: #666;
-  margin-bottom: 2rem;
-}
-.contact-form {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-.form-group {
-  margin-bottom: 1rem;
-}
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #333;
-  font-weight: 500;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 15px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #e91e63;
-}
-.checkbox-group {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-.checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  cursor: pointer;
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-.checkbox-label input[type="checkbox"] {
-  width: auto;
-  margin: 0;
-}
-.map-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-.map-container {
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-}
-.map-info {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-.map-info p {
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-.map-info i {
-  color: #e91e63;
-  margin-right: 0.5rem;
-}
-.faq-section {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.faq-item {
-  background: #fff;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-.faq-question {
-  padding: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.3s;
-}
-.faq-question:hover {
-  background: #f8f9fa;
-}
-.faq-question h3 {
-  font-size: 1.1rem;
-  color: #333;
-  margin: 0;
-}
-.faq-question i {
-  color: #e91e63;
-  transition: transform 0.3s;
-}
-.faq-item.active .faq-question i {
-  transform: rotate(180deg);
-}
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-.faq-answer p {
-  padding: 0 1.5rem 1.5rem;
-  color: #666;
-  line-height: 1.6;
-  margin: 0;
-}
-.social-media {
-  padding: 80px 0;
-  background: #fff;
-}
-.social-media .section-title {
-  margin-bottom: 1rem;
-}
-.social-media p {
-  text-align: center;
-  color: #666;
-  margin-bottom: 3rem;
-}
-.social-media .social-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.social-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 15px;
-  text-decoration: none;
-  color: #333;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
-  min-width: 120px;
-}
-.social-link:hover {
-  transform: translateY(-5px);
-}
-.social-link.facebook:hover {
-  background: #3b5998;
-  color: #fff;
-}
-.social-link.instagram:hover {
-  background: #e4405f;
-  color: #fff;
-}
-.social-link.youtube:hover {
-  background: #ff0000;
-  color: #fff;
-}
-.social-link.tiktok:hover {
-  background: #000;
-  color: #fff;
-}
-.social-link.zalo:hover {
-  background: #0068ff;
-  color: #fff;
-}
-.social-link i {
-  font-size: 2rem;
-}
-.social-link span {
-  font-weight: 500;
-}
-/* Special round icons for contact page */
-.social-media .social-link {
-  width: 70px;
-  height: 70px;
-  min-width: 70px;
-  border-radius: 50%;
-  padding: 0;
-  background: #e91e63;
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.social-media .social-link i {
-  font-size: 1.4rem;
-}
-.social-media .social-link span {
-  display: none;
-}
+/* =================================================== */
+/* 2. Footer & CTA (Dùng chung)                        */
+/* =================================================== */
 .cta {
   background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);
   color: #fff;
-  padding: 80px 0;
+  padding: 60px 0; /* SỬA: Giảm padding */
   text-align: center;
 }
 .cta-content h2 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* SỬA: Giảm font size */
   margin-bottom: 1rem;
 }
 .cta-content p {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* SỬA: Giảm font size */
   margin-bottom: 2rem;
   opacity: 0.9;
 }
@@ -403,8 +159,6 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
-
-/* Footer */
 .footer {
   background: #333;
   color: #fff;
@@ -479,29 +233,379 @@ body {
   color: #ccc;
 }
 
-/* Responsive */
+/* =================================================== */
+/* 6. Trang Liên hệ (contact.html)                     */
+/* =================================================== */
+.contact-info {
+  padding: 60px 0; /* SỬA: Giảm padding */
+  background: #f8f9fa;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.contact-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+.contact-icon {
+  font-size: 2.5rem; /* SỬA: Giảm font size */
+  color: #e91e63;
+  margin-bottom: 1rem;
+}
+.contact-item h3 {
+  font-size: 1.2rem; /* SỬA: Giảm font size */
+  margin-bottom: 1rem;
+  color: #333;
+}
+.contact-item p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.contact-form-map {
+  padding: 60px 0; /* SỬA: Giảm padding */
+}
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.contact-form-section h2 {
+  font-size: 1.8rem; /* SỬA: Giảm font size */
+  margin-bottom: 1rem;
+  color: #333;
+}
+.contact-form-section p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+.contact-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e91e63;
+}
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+.map-section h2 {
+  font-size: 1.8rem; /* SỬA: Giảm font size */
+  margin-bottom: 1rem;
+  color: #333;
+}
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+.map-info {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.map-info p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.map-info i {
+  color: #e91e63;
+  margin-right: 0.5rem;
+}
+.faq-section {
+  padding: 60px 0; /* SỬA: Giảm padding */
+  background: #f8f9fa;
+}
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: #fff;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.faq-question {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+.faq-question:hover {
+  background: #f8f9fa;
+}
+.faq-question h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+.faq-question i {
+  color: #e91e63;
+  transition: transform 0.3s;
+}
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.faq-answer p {
+  padding: 0 1.5rem 1.5rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+.social-media {
+  padding: 60px 0; /* SỬA: Giảm padding */
+  background: #fff;
+}
+.social-media .section-title {
+  margin-bottom: 1rem;
+}
+.social-media p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+}
+.social-media .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  min-width: 120px;
+}
+.social-link:hover {
+  transform: translateY(-5px);
+}
+.social-link.facebook:hover {
+  background: #3b5998;
+  color: #fff;
+}
+.social-link.instagram:hover {
+  background: #e4405f;
+  color: #fff;
+}
+.social-link.youtube:hover {
+  background: #ff0000;
+  color: #fff;
+}
+.social-link.tiktok:hover {
+  background: #000;
+  color: #fff;
+}
+.social-link.zalo:hover {
+  background: #0068ff;
+  color: #fff;
+}
+.social-link i {
+  font-size: 2rem;
+}
+.social-link span {
+  font-weight: 500;
+}
+/* SỬA: Ghi đè style cho social link ở contact */
+.social-media .social-link {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  border-radius: 50%;
+  padding: 0;
+  background: #e91e63;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-media .social-link i {
+  font-size: 1.4rem;
+}
+.social-media .social-link span {
+  display: none;
+}
+
+/* =================================================== */
+/* 7. Responsive (Chung cho tất cả)                    */
+/* =================================================== */
+@media (max-width: 1024px) {
+  .hero-content-wrapper {
+    width: calc(100% - 160px);
+    min-height: 450px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .btn {
+    padding: 14px 35px;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* SỬA: Giảm font-size các tiêu đề cho Tablet */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+  .page-header p {
+    font-size: 1rem;
+  }
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+  .cta-content p {
+    font-size: 1rem;
+  }
+  /* SỬA: Menu "lớn quá" - giảm padding và margin */
   .hamburger {
     display: flex;
   }
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 70px;
+    top: 61px; /* SỬA: Giảm top (phải khớp chiều cao header) */
     flex-direction: column;
     background: #fff;
     width: 100%;
+    height: calc(100vh - 61px); /* SỬA: Chiều cao 100% */
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 2rem 0;
+    padding: 1rem 0; /* SỬA: Giảm padding */
   }
   .nav-menu.active {
     left: 0;
   }
-  .nav-menu li {
-    margin: 1rem 0;
+  .nav-menu .nav-item {
+    margin: 0.5rem 0; /* SỬA: Giảm margin */
   }
+  .nav-link {
+    font-size: 1.1rem; /* SỬA: Tăng nhẹ font chữ menu */
+    padding: 0.5rem;
+  }
+
+  /* SỬA: Responsive cho các section */
+  .hero-content-wrapper {
+    width: calc(100% - 80px);
+    min-height: 350px;
+    aspect-ratio: auto;
+  }
+  .hero h1 {
+    font-size: 2.2rem; /* SỬA: Giảm font size */
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1rem; /* SỬA: Giảm font size */
+    margin-bottom: 2rem;
+  }
+  .btn {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+  }
+
+  .service-item,
+  .service-item.reverse {
+    flex-direction: column;
+  }
+  .service-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .featured-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .featured-text h2 {
+    font-size: 1.5rem;
+  }
+  .newsletter-content {
+    flex-direction: column;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
   .contact-content {
     grid-template-columns: 1fr;
   }
@@ -509,8 +613,68 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 @media (max-width: 480px) {
+  /* SỬA: Thêm "bảo bối" thu nhỏ mọi thứ */
+  html {
+    font-size: 87.5%; /* 1rem = 14px. Thu nhỏ mọi thứ 1 cách tỷ lệ */
+  }
   .container {
     padding: 0 15px;
+  }
+
+  /* SỬA: Giảm padding section cho Mobile */
+  .services-preview,
+  .why-choose,
+  .testimonials,
+  .services-detail,
+  .pricing-packages,
+  .process-section,
+  .featured-article,
+  .blog-grid,
+  .newsletter,
+  .contact-info,
+  .contact-form-map,
+  .faq-section,
+  .social-media,
+  .cta {
+    padding: 40px 0;
+  }
+
+  .hero {
+    padding: 20px 15px;
+  }
+  .hero-content-wrapper {
+    width: calc(100% - 40px);
+    min-height: 280px;
+    border-radius: 15px;
+  }
+  .hero-content {
+    padding: 20px;
+  }
+  .hero h1 {
+    font-size: 1.8rem; /* SỬA: Giảm font size */
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+  .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* SỬA: 1 cột */
+  }
+  .package-card {
+    padding: 1.5rem;
+  }
+  .package-card.featured {
+    transform: scale(1); /* SỬA: Bỏ zoom trên mobile */
+  }
+  .blog-posts {
+    grid-template-columns: 1fr; /* SỬA: 1 cột */
   }
 }
