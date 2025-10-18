@@ -1,0 +1,171 @@
+/* =================================================== */
+/* 7. Responsive (Chung cho tất cả)                    */
+/* =================================================== */
+@media (max-width: 1024px) {
+  .hero-content-wrapper {
+    width: calc(100% - 160px);
+    min-height: 450px;
+  }
+  .hero h1 {
+    font-size: 4.8rem; /* SỬA: 48px */
+  }
+  .hero p {
+    font-size: 1.8rem; /* SỬA: 18px */
+  }
+  .btn {
+    padding: 14px 35px;
+    font-size: 1.6rem; /* SỬA: 16px */
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.9rem; /* SỬA: 29px */
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 3.5rem; /* SỬA: 35px */
+  }
+  .page-header p {
+    font-size: 1.6rem; /* SỬA: 16px */
+  }
+  .cta-content h2 {
+    font-size: 2.9rem; /* SỬA: 29px */
+  }
+  .cta-content p {
+    font-size: 1.6rem; /* SỬA: 16px */
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    /* SỬA: 64px (chiều cao .navbar) */
+    top: 64px;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    height: calc(100vh - 64px);
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+  .nav-menu .nav-item {
+    margin: 0.5rem 0;
+  }
+  .nav-link {
+    font-size: 1.8rem; /* SỬA: 18px */
+    padding: 0.5rem;
+  }
+  .hero-content-wrapper {
+    width: calc(100% - 80px);
+    min-height: 350px;
+    aspect-ratio: auto;
+  }
+  .hero h1 {
+    font-size: 3.5rem; /* SỬA: 35px */
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.6rem; /* SỬA: 16px */
+    margin-bottom: 2rem;
+  }
+  .btn {
+    padding: 12px 30px;
+    font-size: 1.4rem; /* SỬA: 14px */
+  }
+  .service-item,
+  .service-item.reverse {
+    flex-direction: column;
+  }
+  .service-content h2 {
+    font-size: 2.9rem; /* SỬA: 29px */
+  }
+  .featured-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .featured-text h2 {
+    font-size: 2.4rem; /* SỬA: 24px */
+  }
+  .newsletter-content {
+    flex-direction: column;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    /* SỬA: Thu nhỏ base font xuống 1rem = 8.75px */
+    font-size: 54.6875%; /* 62.5% * 0.875 */
+  }
+  .container {
+    padding: 0 15px;
+  }
+  .services-preview,
+  .why-choose,
+  .testimonials,
+  .services-detail,
+  .pricing-packages,
+  .process-section,
+  .featured-article,
+  .blog-grid,
+  .newsletter,
+  .contact-info,
+  .contact-form-map,
+  .faq-section,
+  .social-media,
+  .cta {
+    padding: 40px 0;
+  }
+  .hero {
+    padding: 20px 15px;
+  }
+  .hero-content-wrapper {
+    width: calc(100% - 40px);
+    min-height: 280px;
+    border-radius: 15px;
+  }
+  .hero-content {
+    padding: 20px;
+  }
+  .hero h1 {
+    font-size: 2.9rem; /* SỬA: ~25px */
+  }
+  .hero p {
+    font-size: 1.5rem; /* SỬA: ~13px */
+  }
+  .btn {
+    padding: 10px 25px;
+    font-size: 1.4rem; /* SỬA: ~12px */
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  .package-card {
+    padding: 1.5rem;
+  }
+  .package-card.featured {
+    transform: scale(1);
+  }
+  .blog-posts {
+    grid-template-columns: 1fr;
+  }
+}

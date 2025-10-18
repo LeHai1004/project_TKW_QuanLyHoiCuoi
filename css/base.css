@@ -1,0 +1,237 @@
+/* =================================================== */
+/* 1. Base, Header, Nav, Buttons, Containers (Dùng chung) */
+/* =================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  /* SỬA: Đặt 1rem = 10px (62.5% của 16px) */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  /* SỬA: Đặt font-size chuẩn (16px) cho body */
+  font-size: 1.6rem;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.btn {
+  padding: 14px 35px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 1.6rem; /* SỬA: 16px */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.btn-primary {
+  background: #e91e63;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #c2185b;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background: #fff;
+  color: #667eea;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+.btn-outline {
+  background: transparent;
+  color: #e91e63;
+  border: 2px solid #e91e63;
+}
+.btn-outline:hover {
+  background: #e91e63;
+  color: #fff;
+}
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 100px 0 60px;
+  text-align: center;
+}
+.page-header h1 {
+  font-size: 4.5rem; /* SỬA: 45px */
+  margin-bottom: 1rem;
+}
+.page-header p {
+  font-size: 1.8rem; /* SỬA: 18px */
+  opacity: 0.9;
+}
+.section-title {
+  text-align: center;
+  font-size: 3.5rem; /* SỬA: 35px */
+  margin-bottom: 3rem;
+  color: #333;
+}
+.header {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.navbar {
+  padding: 1rem 0;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo h2 {
+  color: #e91e63;
+  font-size: 2.4rem; /* SỬA: 24px */
+}
+.nav-logo i {
+  margin-right: 10px;
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 3.2rem; /* SỬA: 32px */
+}
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #e91e63;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.bar {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* =================================================== */
+/* 2. Footer & CTA (Dùng chung)                        */
+/* =================================================== */
+.cta {
+  background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+.cta-content h2 {
+  font-size: 3.2rem; /* SỬA: 32px */
+  margin-bottom: 1rem;
+}
+.cta-content p {
+  font-size: 1.8rem; /* SỬA: 18px */
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 60px 0 20px;
+}
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 1rem;
+  color: #e91e63;
+}
+.footer-section ul {
+  list-style: none;
+}
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+  color: #e91e63;
+}
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #e91e63;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+.social-links a:hover {
+  background: #ad1457;
+}
+.footer .contact-info p {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+.footer .contact-info i {
+  margin-right: 10px;
+  color: #e91e63;
+}
+.footer .contact-info {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #555;
+  color: #ccc;
+}
